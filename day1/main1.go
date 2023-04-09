@@ -1,3 +1,5 @@
+// https://adventofcode.com/2022/day/1
+
 package main
 
 import (
@@ -8,6 +10,7 @@ import (
 )
 
 const inputFileName = "./input.txt"
+const N = 3
 
 func readInputFile() []string {
 	file, err := os.Open(inputFileName)
@@ -31,10 +34,11 @@ func readInputFile() []string {
 }
 
 func main() {
-	const N = 3
-	input := readInputFile()
 	var max, subtotal, maxNTotal uint64
 	var maxN [N]uint64
+
+	input := readInputFile()
+
 	for i := range input {
 		if len(input[i]) > 0 {
 			val, err := strconv.ParseUint(input[i], 10, 64)
